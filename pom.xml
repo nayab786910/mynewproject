@@ -58,7 +58,7 @@
    			</goals>
   			 </execution>
 	  		</executions>
-			 </plugin>
+		     </plugin>
 		</plugins>
 		<finalName>myspringbootapp</finalName>
 	</build>
