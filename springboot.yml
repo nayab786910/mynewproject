@@ -11,7 +11,7 @@ template:
  metadata:
    name: spring-app
  labels:
-  myname: hello
+  myname: spring-app
 spec:
   containers:
     - name: my-spring-app
