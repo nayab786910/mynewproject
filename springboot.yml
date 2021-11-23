@@ -17,7 +17,7 @@ spec:
     - name: my-spring-app
       image: 519852036875.dkr.ecr.us-east-1.amazonaws.com/my-first-ecr:latest
       imagePullPolicy: Always
-      command: ["/bin/bash"]
+      command: ["java","-jar","/myspringbootapp.jar"]
       ports:
       - containerPort: 8085
 ---
