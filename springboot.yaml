@@ -1,35 +1,11 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: microservice-deployment
-  labels:
-    app: java-microservice
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: java-microservice
-  template:
-    metadata:
-      labels:
-        app: java-microservice
-    spec:
-      containers:
-      - name: java-microservice-container 
-        image: 519852036875.dkr.ecr.us-east-1.amazonaws.com/my-first-ecr:latest 
-        ports:
-        - containerPort: 8085
----
+kind: Pod
 apiVersion: v1
-kind: Service
 metadata:
-  name: java-microservice-service
+  name: spring-app
 spec:
-  #Creating a service of type load balancer. Load balancer gets created but takes time to reflect
-  type: LoadBalancer 
-  selector:
-    app: java-microservice
-  ports:
-  - protocol: TCP
-    port: 8085
-    targetPort: 8085
+  containers:
+    - name: my-spring-app
+      image: 519852036875.dkr.ecr.us-east-1.amazonaws.com/my-first-ecr:latest 
+      command: ["java","-jar","/myspringbootapp.jar"]
+      ports: 
+       - containerports: 8085
