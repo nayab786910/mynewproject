@@ -1,0 +1,22 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+ name: mydeploy
+spec:
+ replicas: 2
+ selector:
+  matchlabels:
+   myname: spring-app 
+template:
+ metadata:
+   name: spring-app
+ labels:
+  myname: spring-app
+spec:
+  containers:
+    - name: my-spring-app
+      image: 519852036875.dkr.ecr.us-east-1.amazonaws.com/my-first-ecr:latest
+      imagePullPolicy: Always
+      command: ["java","-jar","/myspringbootapp.jar"]
+      ports:
+      - containerPort: 8085
