@@ -1,17 +1,7 @@
-kind: Deployment
-apiVersion: apps/v1
+kind: Pod
+apiVersion: v1
 metadata:
- name: mydeploy
-spec:
- replicas: 2
- selector:
-  matchlabels:
-   myname: spring-app 
-template:
- metadata:
-   name: spring-app
- labels:
-  myname: spring-app
+ myname: spring-app
 spec:
   containers:
     - name: my-spring-app
