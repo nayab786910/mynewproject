@@ -1,7 +1,7 @@
 kind: Pod
 apiVersion: v1
 metadata:
- myname: spring-app
+ name: spring-app
 spec:
   containers:
     - name: my-spring-app
