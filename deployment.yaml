@@ -17,7 +17,7 @@ spec:
         image: 519852036875.dkr.ecr.us-east-1.amazonaws.com/my-first-ecr:latest 
         imagePullPolicy: Always
         ports:
-        - containerPort: 8085
+        - containerPort: 8083
 # service type loadbalancer
 ---
 apiVersion: v1
@@ -29,6 +29,6 @@ spec:
     app: angular-app
   ports:
     - protocol: TCP
-      port: 8085
-      targetPort: 8085
+      port: 8083
+      targetPort: 8083
   type: LoadBalancer
