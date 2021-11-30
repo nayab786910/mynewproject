@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-ak-deployment
+  name: my-spring-deployment
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: angular-app
+      app: spring-app
   template:
     metadata:
       labels:
-        app: angular-app
+        app: spring-app
     spec:
       containers:
-      - name: my-angular-app
+      - name: my-spring-app
         image: 519852036875.dkr.ecr.us-east-1.amazonaws.com/my-first-ecr:latest 
         imagePullPolicy: Always
         command: ["java","-jar","/myspringbootapp.jar"]
@@ -24,10 +24,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: angular-app-svc
+  name: spring-app-svc
 spec:
   selector:
-    app: angular-app
+    app: spring-app
   ports:
     - protocol: TCP
       port: 8083
