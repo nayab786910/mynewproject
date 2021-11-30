@@ -20,16 +20,3 @@ spec:
         ports:
         - containerPort: 8083
 # service type loadbalancer
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: spring-app-svc
-spec:
-  selector:
-    app: spring-app
-  ports:
-    - protocol: TCP
-      port: 8083
-      targetPort: 8083
-  type: LoadBalancer
