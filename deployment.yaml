@@ -16,7 +16,7 @@ spec:
       - name: my-spring-app
         image: 519852036875.dkr.ecr.us-east-1.amazonaws.com/my-first-ecr:latest 
         imagePullPolicy: Always
-        command: ["java","-jar","/myspringbootapp.jar"]
+        command: ["/bin/bash"]
         ports:
         - containerPort: 8083
 # service type loadbalancer
