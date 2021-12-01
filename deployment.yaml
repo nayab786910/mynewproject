@@ -1,22 +1,10 @@
-apiVersion: apps/v1
-kind: Deployment
+kind: Pod
+apiVersion: v1
 metadata:
-  name: my-spring-deployment
+  name: testpod
 spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: spring-app
-  template:
-    metadata:
-      labels:
-        app: spring-app
-    spec:
-      containers:
-      - name: my-spring-app
-        image: 519852036875.dkr.ecr.us-east-1.amazonaws.com/my-first-ecr:latest 
-        imagePullPolicy: Always
-        command: ["/bin/bash"]
-        ports:
-        - containerPort: 8083
-# service type loadbalancer
+  containers:
+    - name: c00
+      image:  519852036875.dkr.ecr.us-east-1.amazonaws.com/my-first-ecr:latest
+      ports:
+       - containerPort: 8083    
